@@ -17,7 +17,6 @@ function get(username) {
    var teamtreehouseURLString = "http://teamtreehouse.com/" + username + ".json";
    var request = http.get(teamtreehouseURLString, function(response) {
       // read the data from the response
-      console.log(response.statusCode);
       var body = "";
       // streams chunks of data as they come in
       response.on("data", function(chunk) {
