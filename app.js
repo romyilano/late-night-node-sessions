@@ -11,13 +11,18 @@ function printMessage(username, badgeCount, points) {
 
 // Connect to api url http://teamtreehouse.com/chalkers.json
 var request = http.get("http://teamtreehouse.com/" + username + ".json", function(response) {
-// read the data from the response
+   // read the data from the response
    console.log(response.statusCode);
+   var body = "";
+   // streams chunks of data as they come in
    response.on("data", function(chunk) {
-      console.log('BODY: ' + chunk);
+      body += chunk;
    });
-// parse the data
-// print the data   
+   response.on("end", function() {
+      console.log(body);
+   });
+   // parse the data
+   // print the data   
 });
 
 request.on("error", function(error) {
