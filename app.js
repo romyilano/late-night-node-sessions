@@ -15,12 +15,3 @@ if (commandInput[0] === "treehouse") {
 } else if (commandInput[0] === "oakland_service") {
    oakland_service.fetchServiceRequests();
 }
-
-
-// oakland_service.fetchServiceRequests();
-// profile.get(username);
-// profile.get("joykesten2");
-
-// this is weird! since there are exactly 1 callback for forEach and get()
-// it just gets passed back
-// users.forEach(profile.get);
