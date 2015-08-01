@@ -9,6 +9,9 @@ to access the Open Oakland Public Service Request data off Socrata
 This would be a good tutorial to get other people into node.js
 and engaged. Since it's all command line it will be nice and
 accessible, and then we can peruse the Oakland Open Data sets
+	
+	node app.js treehouse romyilano
+	node app.js oakland_service	
 
 ### Credits
 
