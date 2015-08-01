@@ -10,18 +10,25 @@ This would be a good tutorial to get other people into node.js
 and engaged. Since it's all command line it will be nice and
 accessible, and then we can peruse the Oakland Open Data sets
 
-## Examples
+### Credits
 
-* Most common reasons for food recalls https://opendata.socrata.com/resource/9iuc-3wkn.json
+_Reviewed node.js, filled in empty holes and stuff I had in my node knowledge
+Courtesy tree house! thanks dudes and chaulkers great teacher_
+
+
+## More Ideas
+
+For tutorials and students we can practice on the Oakland Open Data sets.
+
+* Most common reasons for food recalls [Socrata JSON Sample without keys](https://opendata.socrata.com/resource/9iuc-3wkn.json)  
+
 * Overall Proficiency by ward for schools with part time or full time librarians
-** https://opendata.socrata.com/Education/Overall-Proficiency-by-Ward-for-Schools-w-Full-or-/xzgu-pmpy
-
+	**  [Socrata page](https://opendata.socrata.com/Education/Overall-Proficiency-by-Ward-for-Schools-w-Full-or-/xzgu-pmpy)  
+	
 and so on.
 
 
-# Credits
-
-Reviewed node.js, filled in empty holes and stuff I had in my node knowledge
-Courtesy tree house! thanks dudes and chaulkers great teacher
 
 
+
+![SudoRoom JavaScript Forest](images/JavasScript_Forest_at_SudoRoom.png)
