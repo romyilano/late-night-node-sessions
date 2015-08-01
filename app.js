@@ -2,7 +2,7 @@ var http = require("http");
 
 // Problem: we need a simple way to look at a user's badge count
 // and javascript points
-var username = "romyilanosdfsf"; 
+var username = "romyilano"; 
 var teamtreehouseURLString = "http://teamtreehouse.com/" + username + ".json";
 // actually https 
 var oaklandPublicServiceRequestsJSON = "http://data.oaklandnet.com/resource/quth-gb8e.json";
@@ -28,7 +28,12 @@ var request = http.get(teamtreehouseURLString, function(response) {
       body += chunk;
    });
    response.on("end", function() {
-      console.log(body);
+      try {
+         var profile = JSON.parse(body);
+         printMessage(username, profile.badges.length, profile.points.JavaScript);
+      } catch(error) {
+         printError(error);
+      }
    });
    // parse the data
 
