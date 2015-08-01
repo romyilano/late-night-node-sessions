@@ -1,6 +1,11 @@
 var http = require("http");
 
+
 var oaklandPublicServiceRequestsJSON = "http://data.oaklandnet.com/resource/quth-gb8e.json";
+
+function printServiceRequest(serviceRequestObject) {
+   console.log("Request: " + serviceRequestObject.description + " \n at " + serviceRequestObject.reqaddress.human_address);
+}
 
 function fetchServiceRequests() {
    var request = http.get(oaklandPublicServiceRequestsJSON, function(response) {
@@ -14,8 +19,9 @@ function fetchServiceRequests() {
          try {
             var responseArray = JSON.parse(body);
             // print the responsearray
-            var requestOne = responseArray[0];
-            console.log("The first request: " + requestOne.description + " \n at " + requestOne.reqaddress.human_address);
+            for (var i = 0; i < responseArray.length; i++) {
+               printServiceRequest(responseArray[i]);
+            }
          } catch(error) {
             printError(error);
          }
@@ -30,6 +36,5 @@ function fetchServiceRequests() {
 function printError(error) {
    console.log(error.message);
 }
-
 
 module.exports.fetchServiceRequests = fetchServiceRequests;
