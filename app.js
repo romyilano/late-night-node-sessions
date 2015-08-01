@@ -30,7 +30,9 @@ var request = http.get(teamtreehouseURLString, function(response) {
    response.on("end", function() {
       if (response.statusCode === 200) {
          try {
+            // parse the data
             var profile = JSON.parse(body);
+            // print the data  
             printMessage(username, profile.badges.length, profile.points.JavaScript);
          } catch(error) {
             printError(error);
@@ -40,9 +42,6 @@ var request = http.get(teamtreehouseURLString, function(response) {
          printError({message: "There was an error getting the profile for " + username + ". (" + http.STATUS_CODES[response.statusCode] + ")"});
       }
    });
-   // parse the data
-
-   // print the data   
 });
 
 // connection error
