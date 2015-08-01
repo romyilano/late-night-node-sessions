@@ -3,6 +3,9 @@ var http = require("http");
 // Problem: we need a simple way to look at a user's badge count
 // and javascript points
 var username = "romyilano"; 
+var teamtreehouseURLString = "http://teamtreehouse.com/" + username + ".json";
+// actually https 
+var oaklandPublicServiceRequestsJSON = "http://data.oaklandnet.com/resource/quth-gb8e.json";
 
 function printMessage(username, badgeCount, points) {
    var message = username + " has " + badgeCount + " total badge(s) and " + points + " points";
@@ -10,7 +13,7 @@ function printMessage(username, badgeCount, points) {
 }
 
 // Connect to api url http://teamtreehouse.com/chalkers.json
-var request = http.get("http://teamtreehouse.com/" + username + ".json", function(response) {
+var request = http.get(teamtreehouseURLString, function(response) {
    // read the data from the response
    console.log(response.statusCode);
    var body = "";
