@@ -16,6 +16,12 @@ accessible, and then we can peruse the Oakland Open Data sets
 Getting a raw feed of the Oakland 2015-2016 budget from [OpenData Oakland](https://data.oaklandnet.com)
 
 	node app.js oakland_budget
+
+Result example: there were this many budget requests
+
+	City Council : 308
+	Mayor : 72
+	City Administrator : 620
 	
 
 ### Credits
