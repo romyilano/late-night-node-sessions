@@ -19,9 +19,9 @@ Getting a raw feed of the Oakland 2015-2016 budget from [OpenData Oakland](https
 
 Result example: there were this many budget requests
 
-	City Council : 308
-	Mayor : 72
-	City Administrator : 620
+	City Council : $8366025
+	Mayor : $5708475
+	City Administrator : $43098749
 	
 
 ### Credits
