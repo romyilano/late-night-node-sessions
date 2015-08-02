@@ -13,7 +13,7 @@ accessible, and then we can peruse the Oakland Open Data sets
 	node app.js treehouse romyilano
 	node app.js oakland_service
 	
-Getting a raw feed of the Oakland 2015-2016 budget from OpenData Oakland
+Getting a raw feed of the Oakland 2015-2016 budget from [OpenData Oakland](https://data.oaklandnet.com)
 
 	node app.js oakland_budget
 	
