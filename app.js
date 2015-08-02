@@ -2,7 +2,7 @@
 // and javascript points
 var profile = require("./profile.js"); // can also write profile without js
 var oakland_service = require("./oakland_service.js");
-
+var oakland_budget = require("./oakland_budget.js");
 var username = "romyilano"; 
 
 // console.dir(process.argv);
@@ -14,4 +14,6 @@ if (commandInput[0] === "treehouse") {
    users.forEach(profile.get);
 } else if (commandInput[0] === "oakland_service") {
    oakland_service.fetchServiceRequests();
+} else if (commandInput[0] === "oakland_budget") {
+   oakland_budget.fetchBudgetData();
 }

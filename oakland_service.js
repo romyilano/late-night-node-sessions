@@ -1,6 +1,5 @@
 var http = require("http");
 
-
 var oaklandPublicServiceRequestsJSON = "http://data.oaklandnet.com/resource/quth-gb8e.json";
 
 function printServiceRequest(serviceRequestObject) {
