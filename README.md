@@ -13,9 +13,16 @@ accessible, and then we can peruse the Oakland Open Data sets
 	node app.js treehouse romyilano
 	node app.js oakland_service
 	
-Not so fun! Examining domestic violence incidents in Oakland in the past 90 days  [OpenData Oakland](https://data.oaklandnet.com)
+Not so fun! Examining domestic violence incidents in Oakland in the past 90 days  [OpenData Oakland](https://data.oaklandnet.com/Public-Safety/CrimeWatch-Maps-Past-90-Days/ym6k-rx7a)
+
 
 	$ node app oakland_domestic_violence
+	>>> results...
+	Oakland Crimewatch - the past 90 days
+	Police Precinct 26Y : 2 domestic violence incidents
+	Police Precinct 27Y : 11 domestic violence incidents
+	Police Precinct 34X : 8 domestic violence incidents
+// etc
 	
 	
 Getting a raw feed of the Oakland 2015-2016 budget from [OpenData Oakland](https://data.oaklandnet.com)

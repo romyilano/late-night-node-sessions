@@ -35,6 +35,7 @@ function fetchdata(cb) {
 }
 
 function printDomesticViolenceIncidentsTotal() {
+   console.log("Oakland Crimewatch - the past 90 days");
    printIncidentsByPoliceBeat("DOMESTIC VIOLENCE");
 }
 
@@ -53,7 +54,6 @@ function printIncidentsByPoliceBeat(crimeType){
                }
             }
          });
-         console.log("Oakland Crimewatch - the past 90 days");
          for (var key in crimeTotals) {
             console.log("Police Precinct " + key + " : "  + crimeTotals[key] + " domestic violence incidents");
          }

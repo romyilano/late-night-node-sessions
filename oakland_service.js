@@ -6,7 +6,8 @@ function printServiceRequest(serviceRequestObject) {
    console.log("Request: " + serviceRequestObject.description + " \n at " + serviceRequestObject.reqaddress.human_address);
 }
 
-function fetchServiceRequests() {
+
+function fetchServiceRequests(callback) {
    var request = http.get(oaklandPublicServiceRequestsJSON, function(response) {
    // read the data from the response
    var body = "";
