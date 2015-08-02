@@ -53,44 +53,15 @@ function printIncidentsByPoliceBeat(crimeType){
                }
             }
          });
-
          console.log("Oakland Crimewatch - the past 90 days");
          for (var key in crimeTotals) {
             console.log("Police Precinct " + key + " : "  + crimeTotals[key] + " domestic violence incidents");
          }
       } else {
-         console.log(error.message);
+         print(error);
       }
    });
 }
-
-/*
-function printIncidentsByPoliceBeat(crimeType) {
-   var crimes = fetchdata(function (error, responseArray) {
-      if (error == null) {
-         var crimeTotals = {};
-         _.each(responseArray, function(crimeIncident) {
-            var crimeTypeValue = crimeIncident.crimetype;
-            // var crimeDescription = crimeIncident["description"];
-            var policeBeat = crimeIncident.policebeat;
-            if (crimeTypeValue === crimeType) {
-               if (crimeTotals[policeBeat]) {
-                  crimeTotals[policeBeat]++;
-               } else {
-                  crimeTotals[policeBeat] = 1;
-               }
-            }
-         });
-
-         for (var key in crimeTotals) {
-            console.log("Policebeat: " + key+ " : " + "$" + crimeTotals[key]);
-         }
-      } else {
-         console.log(error.message);
-      }
-   });
-}
-*/
 
 function printError(error) {
    console.log(error.message);
