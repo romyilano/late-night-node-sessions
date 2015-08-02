@@ -39,7 +39,6 @@ function fetchBudgetData(cb) {
 
 function printNumberOfAccountTypes() {
    var budgetDataArray = fetchBudgetData(function (error, responseArray) {
-    //  console.log(responseArray);
       if (error == null) {
          var budgetTotals = {};
          for (var i = 0; i < responseArray.length; i++) {
