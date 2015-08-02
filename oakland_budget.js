@@ -15,7 +15,7 @@ function printBudgetItem(budgetItem) {
    console.log("$" + budgetItem.value + " : " + budgetItem.fund_description);
 }
 
-function fetchBudgetData() {
+function fetchBudgetData(cb) {
    var request = http.get(oaklandBudgetEndpointURL, function(response) {
       // read the data from the response
       var body = "";
@@ -27,11 +27,13 @@ function fetchBudgetData() {
          try {
             var responseArray = JSON.parse(body);
             // todo use underscore
+            cb(null, responseArray);
             for (var i = 0; i < responseArray.length; i++) {
-               printBudgetItem(responseArray[i]);
+               // printBudgetItem(responseArray[i]);
             }
          } catch(error) {
-            printError(error);
+           // printError(error);
+           cb(error, null);
          }
       } else {
          console.log("response code is: " + response.statusCode);
