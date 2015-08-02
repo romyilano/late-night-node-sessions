@@ -4,7 +4,6 @@ Proposed Budget for Fiscal Years
 https://data.oaklandnet.com/Financial/Proposed-Budget-for-Fiscal-Years-2015-2017/w4j2-chmt
 */
 
-// todo add underscore
 var http = require("http");
 var _ = require("underscore");
 
@@ -18,7 +17,6 @@ function printBudgetItem(budgetItem) {
 
 function fetchBudgetData(cb) {
    var request = http.get(oaklandBudgetEndpointURL, function(response) {
-      // read the data from the response
       var body = "";
       response.on("data", function(chunk) {
       body += chunk;
@@ -42,7 +40,6 @@ function printNumberOfAccountTypes() {
    var budgetDataArray = fetchBudgetData(function (error, responseArray) {
       if (error == null) {
          var budgetTotals = {};
-
          _.each(responseArray, function(budgetItem) {
             var department = budgetItem.department;
             var value = parseInt(budgetItem.value);
