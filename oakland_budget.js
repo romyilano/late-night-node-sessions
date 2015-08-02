@@ -6,6 +6,7 @@ https://data.oaklandnet.com/Financial/Proposed-Budget-for-Fiscal-Years-2015-2017
 
 // todo add underscore
 var http = require("http");
+var _ = require("underscore");
 
 var oaklandBudgetEndpointURL = "http://data.oaklandnet.com/resource/w4j2-chmt.json";
 
@@ -41,8 +42,8 @@ function printNumberOfAccountTypes() {
    var budgetDataArray = fetchBudgetData(function (error, responseArray) {
       if (error == null) {
          var budgetTotals = {};
-         for (var i = 0; i < responseArray.length; i++) {
-            var budgetItem = responseArray[i];
+
+         _.each(responseArray, function(budgetItem) {
             var department = budgetItem.department;
             var value = parseInt(budgetItem.value);
             if (budgetTotals[department]) {
@@ -50,7 +51,8 @@ function printNumberOfAccountTypes() {
             } else {
                budgetTotals[department] = value;
             }
-         }
+         });
+
          for (var key in budgetTotals) {
             console.log(key+ " : " + "$" + budgetTotals[key]);
          }
