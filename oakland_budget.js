@@ -26,13 +26,8 @@ function fetchBudgetData(cb) {
       if (response.statusCode === 200) {
          try {
             var responseArray = JSON.parse(body);
-            // todo use underscore
             cb(null, responseArray);
-            for (var i = 0; i < responseArray.length; i++) {
-               // printBudgetItem(responseArray[i]);
-            }
          } catch(error) {
-           // printError(error);
            cb(error, null);
          }
       } else {
@@ -42,8 +37,32 @@ function fetchBudgetData(cb) {
 });
 }
 
+function printNumberOfAccountTypes() {
+   var budgetDataArray = fetchBudgetData(function (error, responseArray) {
+    //  console.log(responseArray);
+      if (error == null) {
+         var budgetTotals = {};
+         for (var i = 0; i < responseArray.length; i++) {
+            var budgetItem = responseArray[i];
+            var department = budgetItem.department;
+            if (budgetTotals[department]) {
+               budgetTotals[department]++;
+            } else {
+               budgetTotals[department] = 1;
+            }
+         }
+         for (var key in budgetTotals) {
+            console.log(key+ " : " + budgetTotals[key]);
+         }
+      } else {
+         console.log(error.message);
+      }
+   });
+}
+
 function printError(error) {
    console.log(error.message);
 }
 
+module.exports.printNumberOfAccountTypes = printNumberOfAccountTypes;
 module.exports.fetchBudgetData = fetchBudgetData;

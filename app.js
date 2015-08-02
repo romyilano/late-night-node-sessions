@@ -15,7 +15,5 @@ if (commandInput[0] === "treehouse") {
 } else if (commandInput[0] === "oakland_service") {
    oakland_service.fetchServiceRequests();
 } else if (commandInput[0] === "oakland_budget") {
-   oakland_budget.fetchBudgetData(function (error, responseArray) {
-      console.log(responseArray);
-   });
+   oakland_budget.printNumberOfAccountTypes();
 }
