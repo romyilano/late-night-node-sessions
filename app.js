@@ -3,6 +3,7 @@
 var profile = require("./profile.js"); // can also write profile without js
 var oakland_service = require("./oakland_service.js");
 var oakland_budget = require("./oakland_budget.js");
+var oakland_domestic_violence = require("./oakland_domestic_violence.js");
 var username = "romyilano"; 
 
 // console.dir(process.argv);
@@ -16,4 +17,6 @@ if (commandInput[0] === "treehouse") {
    oakland_service.fetchServiceRequests();
 } else if (commandInput[0] === "oakland_budget") {
    oakland_budget.printNumberOfAccountTypes();
+} else if (commandInput[0] === "oakland_domestic_violence") {
+   oakland_domestic_violence.printDomesticViolenceIncidentsTotal();
 }
