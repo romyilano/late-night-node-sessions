@@ -44,14 +44,15 @@ function printNumberOfAccountTypes() {
          for (var i = 0; i < responseArray.length; i++) {
             var budgetItem = responseArray[i];
             var department = budgetItem.department;
+            var value = parseInt(budgetItem.value);
             if (budgetTotals[department]) {
-               budgetTotals[department]++;
+               budgetTotals[department] += value;
             } else {
-               budgetTotals[department] = 1;
+               budgetTotals[department] = value;
             }
          }
          for (var key in budgetTotals) {
-            console.log(key+ " : " + budgetTotals[key]);
+            console.log(key+ " : " + "$" + budgetTotals[key]);
          }
       } else {
          console.log(error.message);
